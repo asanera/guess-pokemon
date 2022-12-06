@@ -10,6 +10,7 @@ describe('getPokemonOption', () => {
         const pokemon = await getPokemonOptions()
         pokemon.forEach((pokemon) => {
             expect(pokemon.name).not.toBeNull()
+            expect(pokemon.id).not.toBeNull()
         })
     })
 })
