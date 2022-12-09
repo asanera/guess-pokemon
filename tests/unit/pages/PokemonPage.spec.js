@@ -1,5 +1,5 @@
 import PokemonPage from '@/pages/PokemonPage'
-import { shallowMount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import { pokemonsMock } from '../mocks/pokemons.mock'
 
 describe('PokemonPage Component', () => {
@@ -38,5 +38,22 @@ describe('PokemonPage Component', () => {
         expect(pokemonOption.exists).toBeTruthy()
         expect(pokemonOption.attributes('pokemons')).not.toBeNull()
 
+    })
+
+    test('Debe llamar newGame', async () => {
+        const newGameSyp = jest.spyOn(PokemonPage.methods, 'newGame')
+        wrapper =  shallowMount(PokemonPage, {
+            data() {
+                return {
+                    pokemon: pokemonsMock,
+                    pokemonPropouse: pokemonsMock[0],
+                    showPokemon: false,
+                    showAnswer: true,
+                    message: ''                    
+                }
+            }
+        })        
+        await wrapper.find('button').trigger('click')
+        expect(newGameSyp).toHaveBeenCalled()
     })
 })
