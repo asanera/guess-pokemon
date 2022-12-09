@@ -4,7 +4,7 @@ import { pokemonsMock } from "../mocks/pokemons.mock"
 
 describe('PokemonPage Component', () => {
 
-    let wrapper = shallowMount(PokemonPage)
+    let wrapper
     beforeAll(() => {
        wrapper =  shallowMount(PokemonPage, {
             data() {
