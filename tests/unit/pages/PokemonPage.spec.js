@@ -7,6 +7,6 @@ describe('PokemonPage Component', () => {
         wrapper = mount(PokemonPage)
     })
     test('Debe de hacer match con el snapshot', () =>{
-        
+        expect(wrapper.element).toMatchSnapshot()
     })
 })
