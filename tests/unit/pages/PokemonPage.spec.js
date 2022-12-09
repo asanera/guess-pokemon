@@ -53,7 +53,7 @@ describe('PokemonPage Component', () => {
                 }
             }
         })        
-        await wrapper.find('button').trigger('click')
+        wrapper.find('button').trigger('click')
         expect(newGameSyp).toHaveBeenCalled()
     })
 })
