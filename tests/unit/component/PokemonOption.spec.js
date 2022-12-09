@@ -16,4 +16,12 @@ describe('Test PokemonOption', () => {
     test('Debe hacer match con el snapshot', () => {
         expect(wrapper.element).toMatchSnapshot();
     })
+
+    test('Debe mostrar las cuatro opciones correctamente', () => {
+
+    })
+
+    test('Debe emetir "selection" con sus respectivo parametros', () => {
+        
+    })
 })
