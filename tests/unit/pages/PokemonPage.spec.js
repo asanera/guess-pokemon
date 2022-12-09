@@ -48,10 +48,21 @@ describe('PokemonPage Component', () => {
         expect(newGameSyp).toHaveBeenCalled()
     })
 
-    test('Debe checkear la respuesta', async () => {
+    test('Debe checkear la respuesta correcta', async () => {
         await wrapper.vm.checkAnswer(5)
-        expect(wrapper.find('h2').exists).toBeTruthy()
+        
         expect(wrapper.vm.showAnswer).toBeTruthy()
+        expect(wrapper.find('h2').exists).toBeTruthy()
+        expect(wrapper.find('h2').text()).toEqual(`Correcto, ${wrapper.vm.pokemonPropouse.name}`)
+
+    })
+
+    test('Debe checkear la respuesta incorrecta', async () => {
+        await wrapper.vm.checkAnswer(10)
+
+        expect(wrapper.vm.showAnswer).toBeTruthy()
+        expect(wrapper.find('h2').exists).toBeTruthy()
+        expect(wrapper.find('h2').text()).toEqual(`Ops, era ${wrapper.vm.pokemonPropouse.name}`)
 
     })
 })
