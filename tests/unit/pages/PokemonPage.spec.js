@@ -1,6 +1,6 @@
-import PokemonPage from "@/pages/PokemonPage"
-import { shallowMount } from "@vue/test-utils"
-import { pokemonsMock } from "../mocks/pokemons.mock"
+import PokemonPage from '@/pages/PokemonPage'
+import { shallowMount } from '@vue/test-utils'
+import { pokemonsMock } from '../mocks/pokemons.mock'
 
 describe('PokemonPage Component', () => {
 
@@ -13,7 +13,7 @@ describe('PokemonPage Component', () => {
                     pokemonPropouse: pokemonsMock[0],
                     showPokemon: false,
                     showAnswer: false,
-                    message: ""                    
+                    message: ''                    
                 }
             }
         })
@@ -30,13 +30,13 @@ describe('PokemonPage Component', () => {
     })
 
     test('Debe mostras los componentes de PokemonPicture y PokemonOption', () => {
-        const pokemonPicture = wrapper.find("pokemon-picture-stub")
+        const pokemonPicture = wrapper.find('pokemon-picture-stub')
         expect(pokemonPicture.exists).toBeTruthy()
-        expect(pokemonPicture.attributes("pokemonid")).toEqual("5")
+        expect(pokemonPicture.attributes('pokemonid')).toEqual('5')
         
-        const pokemonOption = wrapper.find("pokemon-option-stub")
+        const pokemonOption = wrapper.find('pokemon-option-stub')
         expect(pokemonOption.exists).toBeTruthy()
-        expect(pokemonOption.attributes("pokemons")).not.toBeNull()
+        expect(pokemonOption.attributes('pokemons')).not.toBeNull()
 
     })
 })
