@@ -18,7 +18,7 @@ describe('Test PokemonOption', () => {
     })
 
     test('Debe mostrar las cuatro opciones correctamente', () => {
-        const [pokemonOptionA, pokemonOptionB, pokemonOptionC, pokemonOptionD] =  wrapper.findAll("li")
+        const [pokemonOptionA, pokemonOptionB, pokemonOptionC, pokemonOptionD] = wrapper.findAll("li")
         
         expect(pokemonOptionA.text()).toEqual(pokemonsMock[0].name)
         expect(pokemonOptionB.text()).toEqual(pokemonsMock[1].name)
